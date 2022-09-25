@@ -17,7 +17,21 @@ public class Person {
 
     public boolean hasAge() {return this.age >= 0;}
 
-    public void happyBirthday() {this.age++;}
+    public void setAge(int age) {
+        if (hasAge()) {
+            throw new IllegalStateException("Возраст уже установлен, дальше через happyBirthday()");
+        }
+        if (age < 0) {
+            throw new IllegalArgumentException("Некорректное значение возраста");
+        }
+        this.age = age;
+    }
+
+    public void happyBirthday() {
+        if (hasAge()) {
+            this.age++;
+        }
+    }
 
     public int getAge() {return age;}
 

@@ -10,6 +10,5 @@ public class Main {
         Person son = mom.newChildBuilder()
                 .setName("Novice")
                 .build();
-        System.out.println();
     }
 }
