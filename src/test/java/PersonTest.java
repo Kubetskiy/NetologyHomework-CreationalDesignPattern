@@ -45,7 +45,7 @@ class PersonTest {
         var person = new Person.Builder()
                 .setName("Name").setSurName("Surname").build();
         Assertions.assertFalse(person.hasAddress());
-        person.setCity("Мухосранск");
+        person.setAddress("Мухосранск");
         Assertions.assertTrue(person.hasAddress());
 
     }
@@ -57,13 +57,13 @@ class PersonTest {
                 .setName("Name")
                 .setSurName("SurName")
                 .setAge(21)
-                .setCity("City")
+                .setAddress("City")
                 .build();
         Person child = parent.newChildBuilder()
                 .setName("Child")
                 .build();
         Assertions.assertEquals(child.getSurName(), parent.getSurName());
         Assertions.assertEquals(child.getAge(), 0);
-        Assertions.assertEquals(child.getCity(), parent.getCity());
+        Assertions.assertEquals(child.getAddress(), parent.getAddress());
     }
 }

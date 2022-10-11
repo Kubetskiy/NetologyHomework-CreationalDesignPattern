@@ -2,13 +2,14 @@ public class Main {
     public static void main(String[] args) {
 
         Person mom = new Person.Builder()
-                .setName("Name")
-                .setSurName("SurName")
+                .setName("Анна")
+                .setSurName("Вольф")
                 .setAge(21)
-                .setCity("City")
+                .setAddress("Сидней")
                 .build();
         Person son = mom.newChildBuilder()
-                .setName("Novice")
+                .setName("Антошка")
                 .build();
+        System.out.println("У " + mom + " есть сын, " + son);
     }
 }
